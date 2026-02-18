@@ -42,21 +42,33 @@ animeflix/
 
 ## 🚀 Como Começar
 
-```bash
-# Clone o repositório
-git clone <url-do-repositorio>
-cd animeflix
+### Pré-requisitos
 
-# Instale as dependências
-pnpm install
-# ou: npm install
+- **Node.js** instalado (recomendado: LTS, v18 ou superior).
+- **npm** ou **pnpm** para instalar dependências.
 
-# Rode o projeto
-pnpm run dev
-# ou: npm run dev
-```
+### Antes de inicializar o projeto
 
-Obs: Se usar `pnpm` e der erro, rode antes no terminal `corepack enable` e tente novamente.
+1. **Clone o repositório** e entre na pasta:
+   ```bash
+   git clone <url-do-repositorio>
+   cd animeflix
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   pnpm install
+   # ou: npm install
+   ```
+   - Se usar **pnpm** e aparecer erro de store, rode antes: `corepack enable` e tente de novo.
+
+3. **Hooks do Git (Lefthook + Commitlint):** ao rodar `pnpm install` ou `npm install`, o script **`prepare`** executa automaticamente **`lefthook install`**. Isso configura o hook **commit-msg**: toda vez que você fizer `git commit`, a mensagem será validada pelo **Commitlint** (padrão [Conventional Commits](https://www.conventionalcommits.org/)). Ou seja, as mensagens precisam seguir o formato `tipo: descrição` (ex.: `feat: add home page`, `fix: layout on mobile`). Se a mensagem estiver fora do padrão, o commit será barrado. Para mais detalhes, veja a seção [Commits semânticos](#commits-semânticos-conventional-commits) mais abaixo.
+
+4. **Subir o projeto:**
+   ```bash
+   pnpm run dev
+   # ou: npm run dev
+   ```
 
 O app fica em **http://127.0.0.1:3000**.
 
