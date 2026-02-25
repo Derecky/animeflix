@@ -1,12 +1,16 @@
+import styles from "./Header.module.css";
+
 export function Header() {
   return (
-    <header className="header">
-      <a href="#" className="header-title">
-        <h1>Ani.me</h1>
-      </a>
+    <header className={styles.header}>
+      <div className={styles.headerTitle}>
+        <a href="#" className={styles.headerTitleLink}>
+          <h1>Ani.me</h1>
+        </a>
+      </div>
 
-      <nav className="header-nav">
-        <ul className="header-menu">
+      <nav className={styles.headerNav}>
+        <ul className={styles.headerMenu}>
           <li>
             <a href="#">Inicio</a>
           </li>
@@ -21,7 +25,7 @@ export function Header() {
           </li>
         </ul>
 
-        <input type="text" placeholder="Buscar" className="header-search" />
+        <input type="text" placeholder="Buscar" className={styles.headerSearch} />
       </nav>
     </header>
   );
