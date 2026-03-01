@@ -1,7 +1,9 @@
+import { Header } from "../component/Header/Header";
+
 export default function Home() {
   return (
-    <div>
-      <h1>ANIMEFLIX</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
