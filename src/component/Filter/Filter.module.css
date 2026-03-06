@@ -1,0 +1,49 @@
+.FilterContainer {
+  width: 100%;
+  height: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.FilterContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.FilterContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.FilterContainer::-webkit-scrollbar-thumb {
+  background-color: #00a3ff;
+  border-radius: 50px;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  gap: 1.9rem;
+}
+
+.navlink {
+  color: #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 108px;
+  height: 46px;
+  text-align: center;
+  background-color: transparent;
+  border: 0.1rem solid #bfbfbf;
+  border-radius: 37px;
+  font-family: var(--font-inter);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.navlink.todos {
+  color: #ffffff;
+  background-color: #151b26;
+  border: 0.1rem solid #bfbfbf;
+}
