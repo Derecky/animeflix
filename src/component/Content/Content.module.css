@@ -1,0 +1,60 @@
+.sectionMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionNovidade {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  gap: 8px;
+}
+
+.sectionTitle h2 {
+  font-family: var(--font-rubik);
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.sectionTitle p {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 18px;
+  color: #bfbfbf;
+}
+
+.sectionBanner {
+  display: flex;
+  height: 25rem;
+  margin-top: 40px;
+  background-image: url("/images/banners/one-punch-man.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  gap: 16px;
+}
+
+.sectionContent h1 {
+  font-family: var(--font-rubik);
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.sectionContent p {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 18px;
+  color: #bfbfbf;
+  max-width: 571px;
+}
