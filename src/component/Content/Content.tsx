@@ -1,6 +1,9 @@
+import { getAnimes } from "@/lib/animes";
 import styles from "./Content.module.css";
 
-export function Content() {
+export default function Content() {
+  const { animes } = getAnimes({ limit: 12 });
+
   return (
     <main className={styles.sectionMain}>
       <section className={styles.sectionNovidade}>
@@ -20,18 +23,35 @@ export function Content() {
           </div>
         </div>
       </section>
+
       <section className={styles.sectionUpdates}>
-        <div className={styles.sectionHeader}>
-          <h2>Últimas atualizações</h2>
-          <button>Ver mais</button>
+        <h2 className={styles.sectionTitleUpdates}>Últimas atualizações</h2>
+
+        <div className={styles.sectionAnimeGrid}>
+          <ul className={styles.sectionAnimeList}>
+            {animes.map((anime) => (
+              <li key={anime.id} className={styles.animeItem}>
+                <a href={`/animes/${anime.id}`} className={styles.cardAnchor}>
+                  <div className={styles.imageWrapper}>
+                    <img
+                      src={anime.capa || "/placeholder.png"}
+                      alt={anime.titulo}
+                      className={styles.animeThumb}
+                    />
+                    <span className={styles.episodeTag}>
+                      {anime.episodios
+                        ? `Episódio ${anime.episodios}`
+                        : "Filme"}
+                    </span>
+                  </div>
+                  <h3 className={styles.animeTitle}>{anime.titulo}</h3>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className={styles.animeGrid}>{/* Animecard */}</div>
-      </section>
-
-      <section className={styles.sectionRecent}>
-        <h2>Animes recentes</h2>
-        <div className={styles.recentAnimesGrid}>{/* Animecard */}</div>
+        <button className={styles.sectionViewMoreButton}>Ver mais</button>
       </section>
     </main>
   );
