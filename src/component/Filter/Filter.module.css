@@ -18,6 +18,7 @@
 .FilterContainer::-webkit-scrollbar-thumb {
   background-color: #00a3ff;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .navbar {
