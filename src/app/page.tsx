@@ -1,7 +1,15 @@
+import { Header } from "../component/Header/Header";
+import { Filter } from "../component/Filter/Filter";
+import Content from "../component/Content/Content";
+import  Footer  from "../component/Footer/Footer";
+
 export default function Home() {
   return (
-    <div>
-      <h1>ANIMEFLIX</h1>
-    </div>
+    <>
+      <Header />
+      <Filter />
+      <Content />
+      <Footer />
+    </>
   );
 }
