@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
-import { Menu, Search } from "lucide-react"; // Ícones profissionais
+import { Menu, Search } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,39 +14,37 @@ import {
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-8">
-        {/* 1. LOGO */}
+    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur">
+      <div className="container flex h-32 items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tighter text-primary">
-            ANIME<span className="text-foreground">FLIX</span>
+          <span className="font-rubik text-primary text-5xl font-medium text-sky-500">
+            Ani.me
           </span>
         </div>
 
-        {/* 2. BUSCA (Apenas Desktop) */}
-        <div className="hidden md:flex relative w-full max-w-sm items-center">
-          <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
+        <nav className="ml-auto hidden items-center gap-12 text-lg font-medium md:flex">
+          <Link href="/" className="hover:text-primary transition-colors">
+            Inicio
+          </Link>
+          <Link href="/" className="hover:text-primary transition-colors">
+            Lista
+          </Link>
+          <Link href="/" className="hover:text-primary transition-colors">
+            Generos
+          </Link>
+          <Link href="/" className="hover:text-primary transition-colors">
+            Novos episodios
+          </Link>
+        </nav>
+
+        <div className="ml-20 hidden w-full max-w-80 items-center md:flex">
           <Input
             type="search"
-            placeholder="Buscar animes..."
-            className="pl-9 rounded-full bg-secondary/50 border-none focus-visible:ring-2 focus-visible:ring-primary"
+            placeholder="Buscar"
+            className="font-inter focus-visible:ring-primary h-12 rounded-full border-none bg-slate-800 pl-6 font-medium placeholder:text-lg placeholder:text-amber-50 focus-visible:ring-2"
           />
         </div>
 
-        {/* 3. NAVEGAÇÃO DESKTOP */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="/" className="hover:text-primary transition-colors">
-            Início
-          </a>
-          <a href="/animes" className="hover:text-primary transition-colors">
-            Animes
-          </a>
-          <a href="/generos" className="hover:text-primary transition-colors">
-            Gêneros
-          </a>
-        </nav>
-
-        {/* 4. MENU MOBILE (O famoso "Hambúrguer") */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -61,34 +59,42 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[350px]">
               <SheetHeader>
-                <SheetTitle className="text-left border-b pb-4">
-                  Navegação
+                <SheetTitle className="border-b pb-4 text-left">
+                  Navegacao
                 </SheetTitle>
               </SheetHeader>
+
               <div className="flex flex-col gap-4 py-6">
                 <div className="relative">
-                  <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                  <Search className="text-muted-foreground absolute top-3 left-3 h-4 w-4" />
                   <Input placeholder="Buscar..." className="pl-9" />
                 </div>
+
                 <nav className="flex flex-col gap-2">
-                  <a
+                  <Link
                     href="/"
-                    className="px-2 py-2 text-lg font-semibold hover:bg-secondary rounded-md"
+                    className="hover:bg-secondary rounded-md px-2 py-2 text-lg font-semibold"
                   >
-                    Início
-                  </a>
-                  <a
-                    href="/animes"
-                    className="px-2 py-2 text-lg font-semibold hover:bg-secondary rounded-md"
+                    Inicio
+                  </Link>
+                  <Link
+                    href="/"
+                    className="hover:bg-secondary rounded-md px-2 py-2 text-lg font-semibold"
                   >
-                    Animes
-                  </a>
-                  <a
-                    href="/generos"
-                    className="px-2 py-2 text-lg font-semibold hover:bg-secondary rounded-md"
+                    Lista
+                  </Link>
+                  <Link
+                    href="/"
+                    className="hover:bg-secondary rounded-md px-2 py-2 text-lg font-semibold"
                   >
-                    Gêneros
-                  </a>
+                    Generos
+                  </Link>
+                  <Link
+                    href="/"
+                    className="hover:bg-secondary rounded-md px-2 py-2 text-lg font-semibold"
+                  >
+                    Novos episodios
+                  </Link>
                 </nav>
               </div>
             </SheetContent>
