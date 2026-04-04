@@ -24,10 +24,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${rubik.variable} antialiased`}
-      >
-        {children}
+      <body className={`${inter.variable} ${rubik.variable} antialiased`}>
+        <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   );
