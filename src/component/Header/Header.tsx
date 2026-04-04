@@ -14,7 +14,7 @@ import {
 
 export default function Header() {
   return (
-    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur">
+    <header>
       <div className="container flex h-32 items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="font-rubik text-primary text-5xl font-medium text-sky-500">
@@ -45,7 +45,12 @@ export default function Header() {
           />
         </div>
 
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <Button variant="ghost" size="icon" className="hover:bg-transparent">
+            <Search className="h-6 w-6" />
+            <span className="sr-only">Buscar</span>
+          </Button>
+
           <Sheet>
             <SheetTrigger asChild>
               <Button
