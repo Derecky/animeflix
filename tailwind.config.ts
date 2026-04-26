@@ -21,7 +21,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, require("tailwind-scrollbar")],
 };
 
 export default config;
