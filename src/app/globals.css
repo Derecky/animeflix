@@ -37,3 +37,28 @@ body {
   overflow-x: hidden;
 }
 
+/* 1. Remove as setas de TODOS os elementos que tenham scroll */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* 2. Define o tamanho da barra (sem as setas) */
+::-webkit-scrollbar {
+  width: 6px; /* Vertical */
+  height: 4px; /* Horizontal - O seu caso no Alfabeto */
+}
+
+/* 3. Estiliza a 'peça' que move (o thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #00a3ff !important; /* slate-700 */
+  border-radius: 50px !important;
+
+  min-width: 219px !important;
+}
+
+/* 4. Deixa o fundo invisível */
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
