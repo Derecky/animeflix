@@ -15,9 +15,9 @@ import {
 export default function Header() {
   return (
     <header>
-      <div className="container flex h-32 items-center justify-between">
+      <div className="container h-20 flex items-center justify-between md:h-32">
         <div className="flex items-center gap-2">
-          <span className="font-rubik text-primary text-5xl font-medium text-sky-500">
+          <span className="font-rubik text-2xl font-medium text-sky-500 md:text-5xl">
             Ani.me
           </span>
         </div>
@@ -45,7 +45,7 @@ export default function Header() {
           />
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-10 md:hidden">
           <Button variant="ghost" size="icon" className="hover:bg-transparent">
             <Search className="h-6 w-6" />
             <span className="sr-only">Buscar</span>
