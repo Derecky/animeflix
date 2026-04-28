@@ -45,7 +45,7 @@ export default function Header() {
           />
         </div>
 
-        <div className="flex items-center gap-10 md:hidden">
+        <div className="flex items-center gap-5 md:hidden">
           <Button variant="ghost" size="icon" className="hover:bg-transparent">
             <Search className="h-6 w-6" />
             <span className="sr-only">Buscar</span>
