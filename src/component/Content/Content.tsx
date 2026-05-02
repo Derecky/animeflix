@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getAnimes } from "@/lib/animes";
 import styles from "./Content.module.css";
 
@@ -18,9 +19,11 @@ export default function Content() {
           </p>
         </div>
         <div className="relative mt-10">
-          <img
-            src="../images/one-punch-man-mobile.png"
+          <Image
+            src="/images/one-punch-man-mobile.png"
             alt="One Punch Man"
+            width={400}
+            height={300}
             className="absolute w-sm object-cover"
           />
           <div className="relative space-y-2 p-6 pt-14">
@@ -46,9 +49,11 @@ export default function Content() {
               <li key={anime.id} className={styles.animeItem}>
                 <a href={`/#/${anime.id}`} className={styles.cardAnchor}>
                   <div className={styles.imageWrapper}>
-                    <img
+                    <Image
                       src={anime.capa || "/placeholder.png"}
                       alt={anime.titulo}
+                      width={200}
+                      height={300}
                       className={styles.animeThumb}
                     />
                     <span className={styles.episodeTag}>
@@ -73,9 +78,11 @@ export default function Content() {
           {animesRecentes.map((anime) => (
             <li key={anime.id} className={styles.animeItem}>
               <div className={styles.imageWrapper}>
-                <img
+                <Image
                   src={anime.capa || "/placeholder.png"}
                   alt={anime.titulo}
+                  width={200}
+                  height={300}
                 />
               </div>
               <h3 className={styles.animeTitle}>{anime.titulo}</h3>
