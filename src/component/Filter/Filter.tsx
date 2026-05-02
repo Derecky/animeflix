@@ -3,7 +3,7 @@ const filters = ["Todos", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 export function Filter() {
   return (
     <header className="w-full overflow-x-auto mt-6 pb-6">
-      <nav className="flex min-w-max items-center justify-start gap-6 md:justify-center md:gap-8">
+      <nav className="flex min-w-max items-center justify-start gap-6 lg:justify-center lg:gap-8">
         {filters.map((filter) => (
           <a
             key={filter}
