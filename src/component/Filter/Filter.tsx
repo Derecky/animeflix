@@ -2,16 +2,16 @@ const filters = ["Todos", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 
 export function Filter() {
   return (
-    <header className="w-full overflow-x-auto px-2 py-4">
-      <nav className="gap-2md:justify-center flex min-w-max items-center justify-start md:gap-8">
+    <header className="w-full overflow-x-auto mt-6 pb-6">
+      <nav className="flex min-w-max items-center justify-start gap-6 md:justify-center md:gap-8">
         {filters.map((filter) => (
           <a
             key={filter}
             href={`#${filter}`}
-            className={`hover:text-primary h-12 w-27 rounded-4xl border px-2 py-2 text-center text-lg font-normal transition-all duration-200 hover:bg-white/5 ${
+            className={`font-inter h-8 w-14 content-center rounded-4xl border px-2 text-center text-sm font-normal text-gray-400 transition-all duration-200 hover:bg-white/5 md:h-11 md:w-27 md:text-lg ${
               filter === "Todos"
-                ? "text-primary border-none bg-slate-700 font-bold"
-                : "text-primary border border-slate-700"
+                ? "text-white w-24 border-none bg-slate-700 font-bold"
+                : "border border-slate-700"
             } `}
           >
             {filter}

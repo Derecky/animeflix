@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getAnimes } from "@/lib/animes";
 import styles from "./Content.module.css";
 
@@ -9,16 +10,27 @@ export default function Content() {
     .slice(0, 6);
 
   return (
-    <main className={styles.sectionMain}>
-      <section className={styles.sectionNovidade}>
-        <div className={styles.sectionTitle}>
-          <h2>Últimas novidades</h2>
-          <p>O que você vai assistir hoje?</p>
+    <main className="container mx-auto space-y-16">
+      <section>
+        <div className="mt-12 flex flex-col gap-2 text-2xl font-normal md:mt-16">
+          <h2 className="font-rubik md:text-4xl">Últimas novidades</h2>
+          <p className="font-inter text-sm text-gray-400 md:text-lg">
+            O que você vai assistir hoje?
+          </p>
         </div>
-        <div className={styles.sectionBanner}>
-          <div className={styles.sectionContent}>
-            <h1>ONE PUNCH MAN TERÁ 3 TEMPORADA</h1>
-            <p>
+        <div className="relative mt-10">
+          <Image
+            src="/images/one-punch-man-mobile.png"
+            alt="One Punch Man"
+            width={400}
+            height={300}
+            className="absolute w-sm object-cover"
+          />
+          <div className="relative space-y-2 p-6 pt-14">
+            <h1 className="font-rubik text-sm font-medium">
+              ONE PUNCH MAN TERÁ 3 TEMPORADA
+            </h1>
+            <p className="font-inter text-xs font-normal text-gray-400">
               Como relatado anteriormente, a franquia baseada no mangá escrito
               por ONE e ilustrado por Yusuke Murata, One Punch Man, divulgou um
               comunicado confirmando a produção de uma terceira temporada da
@@ -37,9 +49,11 @@ export default function Content() {
               <li key={anime.id} className={styles.animeItem}>
                 <a href={`/#/${anime.id}`} className={styles.cardAnchor}>
                   <div className={styles.imageWrapper}>
-                    <img
+                    <Image
                       src={anime.capa || "/placeholder.png"}
                       alt={anime.titulo}
+                      width={200}
+                      height={300}
                       className={styles.animeThumb}
                     />
                     <span className={styles.episodeTag}>
@@ -64,9 +78,11 @@ export default function Content() {
           {animesRecentes.map((anime) => (
             <li key={anime.id} className={styles.animeItem}>
               <div className={styles.imageWrapper}>
-                <img
+                <Image
                   src={anime.capa || "/placeholder.png"}
                   alt={anime.titulo}
+                  width={200}
+                  height={300}
                 />
               </div>
               <h3 className={styles.animeTitle}>{anime.titulo}</h3>
