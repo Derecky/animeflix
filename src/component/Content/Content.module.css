@@ -23,44 +23,5 @@
   bottom: 0;
   left: 0;
   right: 0;
-  color: #bfbfbf;
-}
-
-.sectionUpdates {
-  display: flex;
-  flex-direction: column;
-}
-
-.sectionTitleUpdates {
-  font-family: var(--font-rubik);
-  font-weight: 500;
-  font-size: 30px;
-  margin: 64px 0 40px;
-}
-
-.sectionAnimeList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 3rem 1.1rem;
-}
-
-.animeTitle {
-  font-family: var(--font-rubik);
-  font-weight: 400;
-  font-size: 18px;
   color: #ffffff;
-}
-
-.sectionViewMoreButton {
-  align-self: center;
-  width: 202px;
-  height: 48px;
-  margin: 64px 0 40px;
-  border-radius: 4px;
-  font-family: var(--font-rubik);
-  font-weight: 500;
-  font-size: 18px;
-  color: #ffffff;
-  background: #151b26;
-  cursor: pointer;
 }

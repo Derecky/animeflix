@@ -40,14 +40,19 @@ export default function Content() {
         </div>
       </section>
 
-      <section className={styles.sectionUpdates}>
-        <h2 className={styles.sectionTitleUpdates}>Últimas atualizações</h2>
+      <section className="flex flex-col gap-8">
+        <h2 className="font-rubik mt-12 text-lg font-medium">
+          Últimas atualizações
+        </h2>
 
-        <div className={styles.sectionAnimeGrid}>
-          <ul className={styles.sectionAnimeList}>
-            {animes.map((anime) => (
-              <li key={anime.id} className={styles.animeItem}>
-                <a href={`/#/${anime.id}`} className={styles.cardAnchor}>
+        <div className="relative">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 lg:grid-cols-6">
+            {animes.map((anime, index) => (
+              <li
+                key={anime.id}
+                className={` ${index >= 4 ? "hidden md:block" : "block"} `}
+              >
+                <a href={`/#/${anime.id}`} className="">
                   <div className={styles.imageWrapper}>
                     <Image
                       src={anime.capa || "/placeholder.png"}
@@ -62,14 +67,18 @@ export default function Content() {
                         : "Filme"}
                     </span>
                   </div>
-                  <h3 className={styles.animeTitle}>{anime.titulo}</h3>
+                  <h3 className="font-rubik mt-4 text-sm font-normal">
+                    {anime.titulo}
+                  </h3>
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        <button className={styles.sectionViewMoreButton}>Ver mais</button>
+        <button className="font-inter self-center rounded-b-sm bg-slate-700 h-9.25 w-46.75 text-sm font-semibold">
+          Ver mais
+        </button>
       </section>
 
       <section className={styles.sectionUpdates}>

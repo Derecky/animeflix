@@ -15,29 +15,29 @@ import {
 export default function Header() {
   return (
     <header>
-      <div className="container h-20 flex items-center justify-between md:h-32">
+      <div className="container flex h-20 items-center justify-between lg:h-32">
         <div className="flex items-center gap-2">
-          <span className="font-rubik text-2xl font-medium text-sky-500 md:text-5xl">
+          <span className="font-rubik text-2xl font-medium text-sky-500 lg:text-5xl">
             Ani.me
           </span>
         </div>
 
-        <nav className="ml-auto hidden items-center gap-12 text-lg font-medium md:flex">
-          <Link href="/" className="hover:text-primary transition-colors">
+        <nav className="ml-auto hidden items-center gap-12 text-lg font-medium lg:flex">
+          <Link href="/" className="transition-colors">
             Inicio
           </Link>
-          <Link href="/" className="hover:text-primary transition-colors">
+          <Link href="/" className="transition-colors">
             Lista
           </Link>
-          <Link href="/" className="hover:text-primary transition-colors">
+          <Link href="/" className="transition-colors">
             Generos
           </Link>
-          <Link href="/" className="hover:text-primary transition-colors">
+          <Link href="/" className="transition-colors">
             Novos episodios
           </Link>
         </nav>
 
-        <div className="ml-20 hidden w-full max-w-80 items-center md:flex">
+        <div className="ml-20 hidden w-full max-w-80 items-center lg:flex">
           <Input
             type="search"
             placeholder="Buscar"
@@ -45,7 +45,7 @@ export default function Header() {
           />
         </div>
 
-        <div className="flex items-center gap-5 md:hidden">
+        <div className="flex items-center gap-5 lg:hidden">
           <Button variant="ghost" size="icon" className="hover:bg-transparent">
             <Search className="h-6 w-6" />
             <span className="sr-only">Buscar</span>
