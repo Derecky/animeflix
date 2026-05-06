@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getAnimes } from "@/lib/animes";
-import styles from "./Content.module.css";
 
 export default function Content() {
   const todosOsAnimes = getAnimes();
@@ -22,8 +21,7 @@ export default function Content() {
           <Image
             src="/images/one-punch-man-mobile.png"
             alt="One Punch Man"
-            width={400}
-            height={300}
+            fill
             className="absolute w-sm object-cover"
           />
           <div className="relative space-y-2 p-6 pt-14">
@@ -40,52 +38,64 @@ export default function Content() {
         </div>
       </section>
 
-      <section className={styles.sectionUpdates}>
-        <h2 className={styles.sectionTitleUpdates}>Últimas atualizações</h2>
+      <section className="flex flex-col gap-8">
+        <h2 className="font-rubik mt-12 text-lg font-medium">
+          Últimas atualizações
+        </h2>
 
-        <div className={styles.sectionAnimeGrid}>
-          <ul className={styles.sectionAnimeList}>
-            {animes.map((anime) => (
-              <li key={anime.id} className={styles.animeItem}>
-                <a href={`/#/${anime.id}`} className={styles.cardAnchor}>
-                  <div className={styles.imageWrapper}>
+        <div className="relative">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 lg:grid-cols-6">
+            {animes.map((anime, index) => (
+              <li
+                key={anime.id}
+                className={` ${index >= 4 ? "hidden md:block" : "block"} `}
+              >
+                <a href={`/#/${anime.id}`} className="group block space-y-3">
+                  <div className="relative aspect-2/3 overflow-hidden rounded-xl bg-slate-800 after:absolute after:inset-0 after:bg-linear-to-t after:from-[#06090F] after:to-transparent">
                     <Image
                       src={anime.capa || "/placeholder.png"}
                       alt={anime.titulo}
-                      width={200}
-                      height={300}
-                      className={styles.animeThumb}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-110"
                     />
-                    <span className={styles.episodeTag}>
+                    <span className="font-inter absolute bottom-9 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-xs font-medium text-gray-400">
                       {anime.episodios
                         ? `Episódio ${anime.episodios}`
                         : "Filme"}
                     </span>
                   </div>
-                  <h3 className={styles.animeTitle}>{anime.titulo}</h3>
+                  <h3 className="font-rubik mt-4 text-sm font-normal">
+                    {anime.titulo}
+                  </h3>
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        <button className={styles.sectionViewMoreButton}>Ver mais</button>
+        <button className="font-inter h-9.25 w-46.75 self-center rounded-b-sm bg-slate-700 text-sm font-semibold">
+          Ver mais
+        </button>
       </section>
 
-      <section className={styles.sectionUpdates}>
-        <h2 className={styles.sectionTitleUpdates}>Animes recentes</h2>
-        <ul className={styles.sectionAnimeList}>
+      <section className="flex flex-col gap-8 pb-10">
+        <h2 className="font-rubik pl-3 text-lg font-medium text-white">
+          Animes recentes
+        </h2>
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:grid-cols-6">
           {animesRecentes.map((anime) => (
-            <li key={anime.id} className={styles.animeItem}>
-              <div className={styles.imageWrapper}>
+            <li key={anime.id} className="group block space-y-3">
+              <div className="relative aspect-2/3 overflow-hidden rounded-xl bg-slate-800 after:absolute after:inset-0 after:bg-linear-to-t after:from-[#06090F] after:to-transparent">
                 <Image
                   src={anime.capa || "/placeholder.png"}
                   alt={anime.titulo}
-                  width={200}
-                  height={300}
+                  fill
+                  className="object-cover transition-transform group-hover:scale-110"
                 />
               </div>
-              <h3 className={styles.animeTitle}>{anime.titulo}</h3>
+              <h3 className="font-rubik text-sm font-normal text-gray-200 group-hover:text-sky-400">
+                {anime.titulo}
+              </h3>
             </li>
           ))}
         </ul>
