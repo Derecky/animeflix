@@ -9,7 +9,7 @@ export default function Content() {
     .slice(0, 6);
 
   return (
-    <main className="container mx-auto space-y-16">
+    <main className="container mx-auto">
       <section>
         <div className="mt-12 flex flex-col gap-2 text-2xl font-normal md:mt-16">
           <h2 className="font-rubik md:text-4xl">Últimas novidades</h2>
@@ -64,7 +64,7 @@ export default function Content() {
                         : "Filme"}
                     </span>
                   </div>
-                  <h3 className="font-rubik mt-4 text-sm font-normal">
+                  <h3 className="font-rubik mt-4 text-sm font-normal group-hover:text-sky-400">
                     {anime.titulo}
                   </h3>
                 </a>
@@ -78,7 +78,7 @@ export default function Content() {
         </button>
       </section>
 
-      <section className="flex flex-col gap-8 pb-10">
+      <section className="mt-12 flex flex-col gap-8 pb-10">
         <h2 className="font-rubik pl-3 text-lg font-medium text-white">
           Animes recentes
         </h2>
