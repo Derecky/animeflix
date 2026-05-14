@@ -17,18 +17,40 @@ export default function Content() {
             O que você vai assistir hoje?
           </p>
         </div>
+
         <div className="relative mt-10">
-          <Image
-            src="/images/one-punch-man-mobile.png"
-            alt="One Punch Man"
-            fill
-            className="absolute w-sm object-cover"
-          />
-          <div className="relative space-y-2 p-6 pt-14">
-            <h1 className="font-rubik text-sm font-medium">
+          <div className="block md:hidden">
+            <Image
+              src="/images/one-punch-man-mobile.png"
+              alt="One Punch Man Mobile"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="hidden md:block lg:hidden">
+            <Image
+              src="/images/one-punch-man-tablet.png"
+              alt="One Punch Man Tablet"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+
+          <div className="hidden lg:block">
+            <Image
+              src="/images/one-punch-man-desktop.png"
+              alt="One Punch Man Desktop"
+              fill
+              className="object-cover object-right"
+            />
+          </div>
+
+          <div className="relative space-y-2 p-6 pt-14 md:pt-46 lg:h-100 lg:pt-45 lg:pl-8">
+            <h1 className="font-rubik text-sm font-medium md:text-2xl lg:text-4xl">
               ONE PUNCH MAN TERÁ 3 TEMPORADA
             </h1>
-            <p className="font-inter text-xs font-normal text-gray-400">
+            <p className="font-inter text-xs font-normal text-gray-400 md:text-sm lg:w-142.75 lg:text-lg">
               Como relatado anteriormente, a franquia baseada no mangá escrito
               por ONE e ilustrado por Yusuke Murata, One Punch Man, divulgou um
               comunicado confirmando a produção de uma terceira temporada da
@@ -82,9 +104,13 @@ export default function Content() {
         <h2 className="font-rubik pl-3 text-lg font-medium text-white">
           Animes recentes
         </h2>
+
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:grid-cols-6">
-          {animesRecentes.map((anime) => (
-            <li key={anime.id} className="group block space-y-3">
+          {animesRecentes.map((anime, index) => (
+            <li
+              key={anime.id}
+              className={`group cursor-pointer ${index >= 4 ? "hidden md:block" : "block"} `}
+            >
               <div className="relative aspect-2/3 overflow-hidden rounded-xl bg-slate-800 after:absolute after:inset-0 after:bg-linear-to-t after:from-[#06090F] after:to-transparent">
                 <Image
                   src={anime.capa || "/placeholder.png"}
@@ -93,7 +119,7 @@ export default function Content() {
                   className="object-cover transition-transform group-hover:scale-110"
                 />
               </div>
-              <h3 className="font-rubik text-sm font-normal text-gray-200 group-hover:text-sky-400">
+              <h3 className="font-rubik text-sm font-normal group-hover:text-sky-400 lg:text-lg">
                 {anime.titulo}
               </h3>
             </li>
