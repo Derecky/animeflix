@@ -12,7 +12,9 @@ export default function Content() {
     <main className="container mx-auto">
       <section>
         <div className="mt-12 flex flex-col gap-2 text-2xl font-normal md:mt-16">
-          <h2 className="font-rubik md:text-4xl">Últimas novidades</h2>
+          <h2 className="font-rubik text-2xl md:text-2xl lg:text-4xl">
+            Últimas novidades
+          </h2>
           <p className="font-inter text-sm text-gray-400 md:text-lg">
             O que você vai assistir hoje?
           </p>
@@ -60,8 +62,8 @@ export default function Content() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-8">
-        <h2 className="font-rubik mt-12 text-lg font-medium">
+      <section className="flex flex-col gap-10">
+        <h2 className="font-rubik mt-12 text-lg font-medium md:text-2xl lg:text-3xl">
           Últimas atualizações
         </h2>
 
@@ -101,7 +103,7 @@ export default function Content() {
       </section>
 
       <section className="mt-12 flex flex-col gap-8 pb-10">
-        <h2 className="font-rubik pl-3 text-lg font-medium text-white">
+        <h2 className="font-rubik pl-3 text-lg font-medium text-white md:text-2xl lg:text-3xl">
           Animes recentes
         </h2>
 
